@@ -1,0 +1,42 @@
+{% extends "paginaprincipal2.html" %}
+{% block titulo %}
+    {{ 'Login'}}
+{% endblock %}
+{% block titulo2 %}
+    {{ 'Autenticado de usuarios'}}
+{% endblock %}  
+{% block contenido %}  
+    {%  if form.errors %}
+        <p> Usuario o clave no son validas para el ingreso</p>
+    {% endif %}
+        <!-- <div class="row">
+            <div class = "text-center mt-4">
+                <h3> Iniciar Sesión </h3>
+            </div>
+        </div>  -->     
+
+        <form action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+            <div class="col-md-7 mb-3 offset-md-2">
+              <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+              <input type="text" name="username" class="form-control" placeholder="ejemplo@gmail.com">
+              <span id="emailHelp" class="form-text">¿No tiene ninguna cuenta?</span>
+              <a href="crearcuenta.html" aria-label="Crear cuenta" data-bind="text:"> Crear Cuenta </a>
+            </div>
+            <div class="col-md-7 mb-3 offset-md-2">
+              <label for="inputPassword5" class="form-label">Contraseña</label>
+              <input type="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="********">
+              <div id="passwordHelpBlock" class="form-text">
+                Tu contraseña debe tener al menos 8-20 caracteres, entre letras y numeros.
+              </div>
+            </div>
+           
+            <input type="submit" class="btn btn-primary offset-md-2" role="button" value="siguiente" >
+            <input type="hidden" name="next" value="{{ next }}" >
+            <!--<button name="btnSiguiente" class="btn btn-primary">Siguiente</button>-->
+          </form>
+
+         <!-- <div class="col-md-2 offset-md-2"></div> -->
+
+          
+{% endblock %}

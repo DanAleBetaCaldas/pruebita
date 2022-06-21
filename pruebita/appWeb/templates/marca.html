@@ -1,0 +1,62 @@
+{# COMENTARIO #}
+
+{% extends "paginaprincipal.html" %}
+
+
+
+{% block titulo %}
+<br>
+<h1>Registro de Marca</h1>
+{% endblock %}
+
+{% block contenido %}
+{# muestra los valores #}
+{{ mensaje }}
+<form action="{% url 'marca' %}" method="post"> 
+    {% csrf_token %}
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-2">
+        Id
+    </div>
+    <div class="col-8 col-sm-4">
+        <input type="text" name="txtId" class="form-control">
+    </div>
+    <div class="col-4 col-sm-2">
+        <input type="submit" name="btnBuscar" class="btn btn-success btn-block" value="Buscar">
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-2">
+        Nombre
+    </div>
+    <div class="col-12 col-sm-6">
+        <input type="text" name="txtNombre" class="form-control">
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-2">
+        Activo
+    </div>
+    <div class="col-12 col-sm-6">
+        <input type="checkbox" name="chkActivo" >
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-2">
+        Opciones
+    </div>
+    <div class="col-12 col-sm-6">
+        <input type="submit" name="btnGrabar" class="btn btn-success" value="Grabar" >
+        <input type="submit" name="btnListar" class="btn btn-success" value="Listar">
+        
+    </div>
+</div>
+</form>
+
+{% endblock %}
+
+{% block listado %}
+{% endblock %}

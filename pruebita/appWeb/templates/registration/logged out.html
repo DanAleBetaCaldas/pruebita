@@ -1,0 +1,11 @@
+{% extends "paginaprincipal2.html" %}
+{% block titulo %}
+    {{ 'Login'}}
+{% endblock %}
+{% block titulo2 %}
+    {{ 'Autenticado de usuarios'}}
+{% endblock %}  
+{% block contenido %}  
+    <p>Sesion cerrada</p>
+    <a href="{% url ' login' %}">Presione aqui para iniciar sesion</a>
+{% endblock %}

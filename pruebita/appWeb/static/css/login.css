@@ -1,0 +1,30 @@
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url(floresrosas.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.slide 
+        {
+            margin-top: 20px;
+             
+        }
+
+        .slide img{
+            height: 60vh;
+        }
+
+
+
+
+
+
